@@ -45,7 +45,7 @@ module firstage (
         if (!rst) begin
             sum <= 8'b00000000;  // Reset output to 0
         end else begin
-            sum<= a;  // Update output one cycle later
+            sum<= a+ 1'b0;  // Update output one cycle later
         end
     end
 

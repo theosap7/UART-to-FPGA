@@ -45,17 +45,18 @@ input logic clk_b,
 input logic clk_c,
 input logic cnt,
 input logic clk_in1,
+input logic switch,
 output logic glitched_clk
     );
     
   logic  sel ;
   always_comb begin
-  sel =cnt & clk_c & clk_in1;
+  sel =cnt & clk_c & clk_in1 ;
   end
   
     always_comb begin
     
-    if (sel ==1)
+    if (sel ==1 && switch==1)
     glitched_clk= clk_b;
     else
     glitched_clk=clk_in1;

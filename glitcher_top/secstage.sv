@@ -35,7 +35,7 @@ output logic DV_3
                 if (!rst) begin
                     finout <= 8'b00000000;  // Reset output to 0
                 end else begin
-                    finout<= sum;  // Update output one cycle later
+                    finout<= sum+2'b00;  // Update output one cycle later
                 end
             end
     

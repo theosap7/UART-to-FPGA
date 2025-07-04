@@ -4,6 +4,7 @@ module glitcher_top (
     input logic clk_in1,      // Main system clock (FPGA clock)
     input logic rst, 
     input logic [7:0] a,
+    input logic switch,
     //input logic [3:0] b,         // Reset button
     output logic [7:0] finout,// LED output
     input logic DV_1,
@@ -36,6 +37,7 @@ module glitcher_top (
         .clk_c(clk_c),
         .cnt(cnt),
         .clk_in1(clk_in1),
+        .switch(switch),
         .glitched_clk(glitched_clk)
     );
 
@@ -61,5 +63,6 @@ module glitcher_top (
         .DV_3(DV_3),
         .DV_2(DV_2)
     );
+
 endmodule
 

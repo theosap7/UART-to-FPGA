@@ -1,6 +1,7 @@
 module UART_Loopback_Top (
   input  logic i_Clk,       // Main Clock
   input  logic i_UART_RX,   // UART RX Data
+  input  logic switch,
   output logic o_UART_TX,   // UART TX Data
   input  logic rst
 ); 
@@ -54,6 +55,7 @@ module UART_Loopback_Top (
     .rst(rst),
     .a(fifo_to_glitcher_byte),
     .finout(w_Tx_Byte),
+    .switch(switch),
     .DV_1(fifo_to_glitcher_dv),
     .DV_3(w_Tx_DV)
   );

@@ -1,11 +1,12 @@
 `timescale 1ns / 1ps
-module counter (
+module counter 
+(
     input logic clk_in1,
          
     output logic cnt
 );
     
-    parameter position = 1;  // Set to 4 to trigger every 4 cycles
+    localparam position = 2'b10;  // Set to 4 to trigger every 4 cycles
     logic [3:0] temp = 0;    // 4-bit counter (0 to 3 for 4-cycle pulse)
 
     always_ff @(posedge clk_in1) begin
