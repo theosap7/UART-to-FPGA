@@ -12,7 +12,7 @@
 // (10000000)/(115200) = 87
   
 module uart_tx #(
-  parameter CLKS_PER_BIT = 217//87 arxika
+  parameter CLKS_PER_BIT = 0//87 arxika
 )(
   input logic      i_Clock,
   input logic      i_Tx_DV,
